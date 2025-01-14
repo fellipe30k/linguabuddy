@@ -1,81 +1,84 @@
-# LinguaBuddy
+# 🌟 LinguaBuddy
 
-**LinguaBuddy** é um projeto para praticar vocabulário em inglês por meio de traduções e revisões de palavras e músicas. Ele utiliza Ruby, Bundler e Docker para fornecer um ambiente isolado e fácil de executar.
+**LinguaBuddy** é um projeto incrível para praticar vocabulário em inglês através de traduções e revisões de palavras e músicas! 🎶📚 Ele utiliza **Ruby**, **Bundler** e **Docker** para criar um ambiente isolado e super fácil de usar. 🚀
 
-## Pré-requisitos
+## ✅ Pré-requisitos
 
-- Docker instalado em seu sistema.
-- (Opcional) Make instalado para facilitar os comandos.
+- 🐋 **Docker** instalado no seu sistema.
+- 🛠️ (Opcional) **Make** para facilitar a execução dos comandos.
 
-## Instruções
+## 📝 Instruções
 
-1. **Clone este repositório:**
+1. **Clone este repositório:** 📥
 
     ```bash
     git clone https://github.com/seuusuario/linguabuddy.git
     cd linguabuddy
     ```
 
-2. **Construa a imagem Docker** (isso também instalará as dependências via Bundler):
+2. **Construa a imagem Docker** 🏗️ (isso também instalará as dependências via Bundler):
 
-    Com Make:
+    **Com Make:**
 
     ```bash
     make build
     ```
 
-    Sem Make:
+    **Sem Make:**
 
     ```bash
     docker build -t linguabuddy .
     ```
 
-3. **Rode o script principal `word.rb` para treinar palavras:**
+3. **Rode o script principal `word.rb` para treinar palavras:** ✍️
 
-    Com Make:
+    **Com Make:**
 
     ```bash
     make run-word
     ```
 
-    Sem Make:
+    **Sem Make:**
 
     ```bash
     docker run -it --rm linguabuddy ruby word.rb
     ```
 
-4. **Rode o script `music.rb` para treinar músicas:**
+4. **Rode o script `music.rb` para treinar músicas:** 🎵
 
-    Com Make:
+    **Com Make:**
 
     ```bash
     make run-music
     ```
 
-    Sem Make:
+    **Sem Make:**
 
     ```bash
     docker run -it --rm linguabuddy ruby music.rb
     ```
 
-## Funcionamento
+---
 
-### `word.rb`
+## 🛠️ Funcionamento
 
-Este script carrega um arquivo CSV com 80% das palavras mais usadas em diálogos em inglês e solicita que o usuário forneça a tradução para o português. Ele apresenta sua pontuação e faz revisões periódicas das palavras que você errou.
+### 📝 `word.rb`
 
-### `music.rb`
+Este script carrega um arquivo CSV com **80% das palavras mais usadas em diálogos em inglês** e pede que você forneça a tradução para o português. 🇬🇧➡️🇧🇷  
+🎯 Ele mostra sua pontuação e revisa as palavras que você errou. 
 
-Este script permite que você pratique inglês através de músicas, aprimorando sua compreensão auditiva e vocabulário.
+### 🎧 `music.rb`
 
-## Contribuições
-
-Sinta-se à vontade para abrir Issues e Pull Requests.
-
-## Licença
-
-Este projeto está sob a licença MIT.
+Treine seu inglês com músicas! 🕺💃 Melhore sua **compreensão auditiva** e aumente seu **vocabulário** enquanto se diverte. 🎙️
 
 ---
 
-Com esses arquivos, você terá um projeto pronto para ser executado com Docker, utilizando Bundler para gerenciar as dependências Ruby.
+## 🤝 Contribuições
+
+Adoramos contribuições! 🌟 Sinta-se à vontade para abrir **Issues** e **Pull Requests**. 💻✨
+
+---
+
+## 📜 Licença
+
+Este projeto está sob a licença **MIT**. 📝
