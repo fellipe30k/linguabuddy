@@ -1,27 +1,27 @@
-# Carregar as palavras do CSV
-require 'csv'
-require 'colorize'
-require 'i18n'
-
-# Configurar I18n para remover acentos
-I18n.enforce_available_locales = false
-
-# Caminho para o arquivo CSV
-file_path = 'words/english_practice_words.csv'
-
-# Musics muscis/
-
-# Ler palavras e traduções, incluindo sinônimos
-words = CSV.read(file_path, headers: true).map do |row|
-  # Extrair traduções e sinônimos (caso existam)
-  traducoes = row['Portuguese'] ? row['Portuguese'].split(/[\/,]/).map(&:strip) : []
-  sinonimos = row['Synonyms'] ? row['Synonyms'].split(/[\/,]/).map(&:strip) : []
-
-  {
-    english: row['English'],
-    portuguese: traducoes,
-    synonyms: sinonimos
-  }
+def read_and_score_sentences(total_words)
+  sentences = []
+  puts 'Digite até 10 frases. Quando terminar, aperte Enter.'
+  10.times do
+    print 'Frase #{sentences.size + 1}: '
+    sentence = gets.chomp
+    break if sentence.empty?
+    sentences << sentence
+  end
+  correct_answers = 0
+  missed_words = []
+  sentences.each do |sentence|
+    result_missed = ask_word(sentence)
+    show_feedback(result_missed, sentence)
+    if result_missed[:correct]
+      correct_answers += 1
+    else
+      missed_words << sentence
+    end
+  end
+  percentual_acertos = (correct_answers.to_f / sentences.size * 100).round(2)
+  puts 'Você acertou #{correct_answers} de #{sentences.size} frases.'
+  puts 'Seu percentual de acertos é: #{percentual_acertos}%'
+  return correct_answers, sentences.size
 end
 
 # Embaralhar as palavras
